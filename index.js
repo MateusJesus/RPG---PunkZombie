@@ -582,7 +582,6 @@ function mostrarPer() {
         </tr>
         
         `
-        console.log(linha.optionAtr, pericias[index].optionAtr)
     })
     salvarLocalmente('pericia_' + perso, JSON.stringify(pericias))
     tBoryPer.innerHTML = linhaPer
