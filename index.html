@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/root.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styleGeral.css">
+    <link rel="stylesheet" href="css/personagem.css">
+    <link rel="stylesheet" href="css/iventario.css">
+    <link rel="stylesheet" href="css/habilidades.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css"
+        integrity="sha512-hvNR0F/e2J7zPPfLC9auFe3/SE0yG4aJCOd/qxew74NN7eyiSKjr7xJJMu1Jy2wf7FXITpWS1E/RY8yzuXN7VA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>RPG | PunkZombie</title>
+</head>
+
+<body>
+    <header>
+    </header>
+
+
+    <div class="sideBar">
+        <div class="sideBarCOntent">
+        <div class="botaoSidebar"><i class="bi bi-justify"></i></div>
+            <a>
+                <span>RPG | PunkZombie</span>
+            </a>
+            <hr>
+            <ul class="opcoesSidebar">
+                <li>
+                    <a href=""><i class="bi bi-house"></i> Início</a>
+                </li>
+                <li>
+                    <a href="https://docs.google.com/document/d/1jN-JCTJDC75_bRA9wwYY49Kt8M3fWQFQzQb2TTo_HuQ/edit?usp=sharing"
+                        target="_blank"><i class="bi bi-file-text"></i> Link do Sistema</a>
+                </li>
+                <li onclick="listaSidebar()">
+                    <a><i class="bi bi-view-list"></i> Fichas</a><i id="setaFichasSidebar" class="bi-chevron-down"></i>
+                </li>
+                <ul class="listaFichasSidebar overflow" id="listaFichasSidebar">
+
+                </ul>
+            </ul>
+        </div>
+    </div>
+
+    <div class="paginas">
+        <div id="pag3" class="pagEditar">
+            <div id="editor_img" class="editor_img box">
+                <div class="previewImg" id="previewImg">
+                    <div id="loading" class="loading"></div>
+                </div>
+                <div id="previewBtn">
+                </div>
+            </div>
+        </div>
+
+        <div id="opcoesImagem" class="opcoesImagem">
+            <div id="opcoesImagemBtns" class="opcoesImagemBtns box">
+            </div>
+        </div>
+
+        <div id="pag1" class="pagina ativo">
+            <div class="pagina_inicial">
+                <div id="area_fichas" class="area_fichas">
+                </div>
+                <button onclick="criarFicha()">Crie sua ficha</button>
+            </div>
+        </div>
+
+        <div id="loadingFicha">
+            <div class="loading">
+            </div>
+        </div>
+
+        <div id="pag2" class="pagina">
+
+            <div class="header_ficha">
+                <a href="#pag1">Voltar</a>
+                <a href="https://docs.google.com/document/d/1jN-JCTJDC75_bRA9wwYY49Kt8M3fWQFQzQb2TTo_HuQ/edit?usp=sharing"
+                    target="_blank">Link da Ficha</a>
+                <a href="#personagem">Personagem</a>
+                <a href="#iventario">Iventario</a>
+                <a href="#habilidades">habilidade</a>
+            </div>
+            <section id="personagem" class="section personagem">
+                <h2 class="title_content">Personagem</h2>
+                <div class="sobre_personagem">
+                    <div class="informacoes_status">
+                        <div class="div-inf_stat">
+
+                            <div class="informacoes_perso box">
+                                <h2 class="title_content">Informações</h2>
+                                <div class="content_perso boxcontent">
+
+                                    <div class="inf_item">
+                                        <label for="nome_jogador">Nome do Jogador:</label>
+                                        <input  maxlength="20" id="nome_jogador" name="nome_jogador" type="text">
+                                    </div>
+
+                                    <div class="inf_item">
+                                        <label for="nome_personagem">Nome do personagem:</label>
+                                        <input  maxlength="30" id="nome_personagem" name="nome_personagem" type="text">
+                                    </div>
+
+                                    <div class="inf_item">
+                                        <label for="variante">variante:</label>
+                                        <input  maxlength="15" id="variante" name="variante" type="text">
+                                    </div>
+
+                                    <div class="inf_item">
+                                        <label for="origem">Origem:</label>
+                                        <input id="origem" name="origem" type="text">
+                                    </div>
+
+                                    <div class="inf_item">
+                                        <label for="classe">Classe:</label>
+                                        <input id="classe" name="classe" type="text">
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="status">
+                                <div class="if_status box">
+                                    <h2 class="title_content">NIV</h2>
+                                    <div class="content">
+                                        <input maxlength="2" class="input_num" type="text" name="status_niv"
+                                            id="status_niv" oninput="statusNiv()">
+                                    </div>
+                                </div>
+                                <div class="if_status box">
+                                    <h2 class="title_content">STA</h2>
+                                    <div class="content">
+                                        <input maxlength="2" class="input_num" type="text" name="status_sta"
+                                            id="status_sta">
+                                        <hr>
+                                        <input maxlength="2" class="input_num" type="text" name="status_statot"
+                                            id="status_statot">
+                                    </div>
+                                </div>
+                                <div class="if_status box">
+                                    <h2 class="title_content">PDI</h2>
+                                    <div class="content">
+                                        <input maxlength="2" class="input_num" type="text" name="status_pdi"
+                                            id="status_pdi">
+                                        <hr>
+                                        <input maxlength="2" class="input_num" type="text" name="status_pditot"
+                                            id="status_pditot">
+                                    </div>
+                                </div>
+                                <div class="if_status box">
+                                    <h2 class="title_content">PDV</h2>
+                                    <div class="content">
+                                        <input maxlength="2" class="input_num" type="text" name="status_pdv"
+                                            id="status_pdv">
+                                        <hr>
+                                        <input maxlength="2" class="input_num" type="text" name="status_pdvtot"
+                                            id="status_pdvtot">
+                                    </div>
+                                </div>
+                                <div class="if_status box">
+                                    <h2 class="title_content">DEF</h2>
+                                    <div class="content">
+                                        <p class="res_carga" id="res_defesa">10</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carac_personagem">
+                            <div class="caracteristica box">
+                                <h2 class="title_content">Aparencia</h2>
+                                <textarea name="aparencia" id="aparencia" cols="30" rows="5"></textarea>
+                            </div>
+                            <div class="caracteristica box">
+                                <h2 class="title_content">personalidade</h2>
+                                <textarea name="personalidade" id="personalidade" cols="30" rows="5"></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="resistencia_foto">
+                        <div class="resistencia box">
+                            <h2 class="title_content">resistencia</h2>
+                            <input type="text" name="resist_perso" id="resist_perso">
+                        </div>
+                        <div class="imagem_perso box">
+                            <div id="text_aviso">
+                                <!-- <h1 id="aviso_pesado" class="pagina degrade">opa tu ta pesado</h1> -->
+                            </div>
+                            <div id="imagemContainer">
+                                <img id="img_personagem" src="">
+                                <label for="inputImgPerso" id="customFileUpload" class="custom-file-upload">
+                                    <span id="spanFileUpload">Clique ou arraste e
+                                        <br>
+                                        solte sua imagem aqui.
+                                        <br>
+                                        <i class="bi bi-box-arrow-in-down"></i>
+                                    </span>
+                                    <input type="file" name="inputImgPerso" id="inputImgPerso"
+                                        accept=".jpg, .jpeg, .png">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="atri_peri">
+                        <div class="atributos">
+                            <div class="atributo box">
+                                <h2 class="title_content">FOR</h2>
+                                <input type="text" maxlength="2" name="atri_for" id="atri_for" oninput="forInp()">
+                            </div>
+
+                            <div class="atributo box">
+                                <h2 class="title_content">INT</h2>
+                                <input type="text" maxlength="2" name="atri_int" id="atri_int" oninput="intInp()">
+                            </div>
+
+                            <div class="atributo box">
+                                <h2 class="title_content">AGI</h2>
+                                <input type="text" maxlength="2" name="atri_agi" id="atri_agi" oninput="agiInp()">
+                            </div>
+
+                            <div class="atributo box">
+                                <h2 class="title_content">VIG</h2>
+                                <input type="text" maxlength="2" name="atri_vig" id="atri_vig" oninput="vigInp()">
+                            </div>
+
+                            <div class="atributo box">
+                                <h2 class="title_content">CAR</h2>
+                                <input type="text" maxlength="2" name="atri_car" id="atri_car" oninput="carInp()">
+                            </div>
+                        </div>
+                        <div class="pericias box">
+                            <h2 class="title_content">perícias</h2>
+                            <div class="pericia_content overflow">
+                                <table class="table tablePer" id="tablePer">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th class="thNumber">Total</th>
+                                            <th class="thPer">Perícia</th>
+                                            <th class="thAtr">Atributos</th>
+                                            <th class="thNumber">1/2<br>Nível</th>
+                                            <th class="thNumber">Outros</th>
+                                            <th class="thNumber thUltimo"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tBodyPer">
+                                        <!-- <tr >
+                                        <td id="soma">0</td>
+                                        <td><input type="text" name="" id="pericia"></td>
+                                        <td>
+                                            <select id="select" class="form-select" aria-label="Default select example">
+                                                <option value="0">Selecione...</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input type="number" name="" id="meioNivel">
+                                        </td>
+                                        <td>
+                                            <input type="number" name="" id="outros">
+                                        </td>
+                                        <td>
+                                            <div class="menos">
+                                                <i class="fa fa-minus"></i>
+                                            </div>
+                                        </td>
+                                    </tr> -->
+                                    </tbody>
+                                </table>
+                                <button onclick="adicionarPER()">
+                                    <strong>
+                                        ADICIONAR PERÍCIA
+                                    </strong>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="iventario" class="section iventario">
+                <h1 class="title_content">iventário</h1>
+                <div class="TUDOiventario">
+                    <div class="carga_prof">
+                        <div class="carga box">
+                            <h2 class="title_content">carga</h2>
+                            <div class="content carga_content">
+                                <p class="res_carga" id="res_carga"></p>
+                                <hr>
+                                <input type="text" name="carga_total" id="carga_total" maxlength="4" placeholder="5">
+                            </div>
+                        </div>
+                        <div class="proficiencia box">
+                            <h2 class="title_content">proficiênfia</h2>
+                            <div class="proficiencia_content overflow">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>proficiênfia</th>
+                                            <th class="thUltimo thNumber"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbodyProf">
+                                    </tbody>
+                                </table>
+                                <button onclick="adicionarProf()">ADICIONAR proficiência</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="equi_arma">
+                        <div class="equipamento box">
+                            <h2 class="title_content">Equipamentos</h2>
+                            <div class="equipamentos overflow">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="thNumber">qnt.</th>
+                                            <th class="thName">item</th>
+                                            <th class="thDesc">descrição</th>
+                                            <th class="thNumber">carga</th>
+                                            <th class="thUltimo thNumber"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbodyEQUIP_1">
+                                    </tbody>
+                                </table>
+                                <button onclick="adicionarEquip()">
+                                    ADICIONAR EQUIPAMENTO
+                                </button>
+                            </div>
+                        </div>
+                        <div class="arma box">
+                            <h2 class="title_content">armas</h2>
+                            <div class="arma_content overflow">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>arma</th>
+                                            <th class="thDado">teste de dano</th>
+                                            <th class="thDado">critico</th>
+                                            <th class="thDado">munição</th>
+                                            <th class="thNumber">carga</th>
+                                            <th class="thNumber thUltimo"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbodyArma">
+                                    </tbody>
+                                </table>
+                                <button onclick="adicionarArma()">ADICIONAR arma</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vest_def">
+                        <div class="vestimenta box">
+                            <h2 class="title_content">vestimenta</h2>
+                            <div class="vestimenta_content overflow">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="thNameVest">roupa</th>
+                                            <th class="thBonusVest">bonûs</th>
+                                            <th class="thNumber">carga</th>
+                                            <th class="thUltimo thNumber"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbodyVest">
+                                    </tbody>
+                                </table>
+                                <button onclick="adicionarVest()">ADICIONAR roupa</button>
+                            </div>
+                        </div>
+                        <div class="defesa box">
+                            <h2 class="title_content">defesa</h2>
+                            <div class="defesa_content">
+                                <div>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>proteção</th>
+                                                <th class="thNumber">pontos</th>
+                                                <th class="thNumber">pena</th>
+                                                <th class="thNumber">carga</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <input id="nomeprotecao1" placeholder="Armadura" maxlength="15" class="inputDesc" type="text">
+                                                </td>
+                                                <td>
+                                                    <input id="inputPontosDefesa1" oninput="inputPontosDef1()"
+                                                        class="inputDesc" type="text" maxlength="3">
+                                                </td>
+                                                <td>
+                                                    <input id="inputPenaDefesa1" oninput="inputPenaDef1()"
+                                                        class="inputDesc" type="text" maxlength="3">
+                                                </td>
+                                                <td>
+                                                    <input id="inputCargaDefesa1" oninput="inputCargaDef1()"
+                                                        class="inputDesc" type="text" maxlength="3">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input id="nomeprotecao2"  placeholder="Escudo" maxlength="15" class="inputDesc" type="text">
+                                                </td>
+                                                <td>
+                                                    <input id="inputPontosDefesa2" oninput="inputPontosDef2()"
+                                                        class="inputDesc" type="text" maxlength="2">
+                                                </td>
+                                                <td>
+                                                    <input id="inputPenaDefesa2" oninput="inputPenaDef2()"
+                                                        class="inputDesc" type="text" maxlength="2">
+                                                </td>
+                                                <td>
+                                                    <input id="inputCargaDefesa2" oninput="inputCargaDef2()"
+                                                        class="inputDesc" type="text" maxlength="2">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <hr class="hrDef">
+                                <div class="defesa_res">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="thNumber">Armad.</th>
+                                                <th class="thNumber">escudo</th>
+                                                <th>atributo</th>
+                                                <th class="thNumber">outros</th>
+                                                <th class="thNumber">base</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <p id="armdDef" class="textDefRes">0</p>
+                                                </td>
+                                                <td>
+                                                    <p id="escudDef" class="textDefRes">0</p>
+                                                </td>
+                                                <td id="selectDef">
+                                                    <select id="selectDefesaAtr" class="form-select"
+                                                        onchange="selectDefAtr()"></select>
+                                                </td>
+                                                <td>
+                                                    <input id="outrosInputDef" class="inputDesc" type="text"
+                                                        maxlength="2" oninput="outrosDef()">
+                                                </td>
+                                                <td>
+                                                    <p class="textDefRes">10</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p id="resDefDef">10</p>
+                                </div>
+                                <div class="defesa_res">
+                                    <p class="textPenDef">Penalidade total de Armadura:</p>
+                                    <p id="resPenDef">0</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="habilidades" class="section habilidades">
+                <h2 class="title_content">habilidades</h2>
+                <div class="divhab">
+                    <div class="camposHab">
+                        <div class="campoHab box">
+                            <input maxlength="30" class="titleCamp" type="text" name="titleCamp1" id="titleCamp1">
+                            <textarea class="campoTxt" name="textCamp1" id="textCamp1" cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="campoHab box">
+                            <input class="titleCamp" type="text" name="titleCamp2" id="titleCamp2">
+                            <textarea class="campoTxt" name="textCamp2" id="textCamp2" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+                    <div class="overflow camposHab box">
+                        <input maxlength="30" class="titleCamp" type="text" name="titleCamp3" id="titleCamp3" oninput="titleCamp3()">
+                        <div class="campHab_content">
+                            <div id="Campo3Hab"></div>
+                            <button onclick="adicionarCampo3()">adicionar</button>
+                        </div>
+                    </div>
+                    <div class="overflow camposHab box">
+                        <input maxlength="30" class="titleCamp" type="text" name="titleCamp4" id="titleCamp4"  oninput="titleCamp4()">
+                        <div class="campHab_content">
+                            <div id="Campo4Hab"></div>
+                            <button onclick="adicionarCampo4()">adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js"
+        integrity="sha512-9KkIqdfN7ipEW6B6k+Aq20PV31bjODg4AA52W+tYtAE0jE0kMx49bjJ3FgvS56wzmyfMUHbQ4Km2b7l9+Y/+Eg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
