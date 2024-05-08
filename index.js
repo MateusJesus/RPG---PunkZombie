@@ -1,6 +1,6 @@
 
 var perso
-
+console.log(perso)
 mostrarListaFichas()
 
 function salvarLocalmente(key, elemento) {
@@ -285,8 +285,6 @@ function voltarPagInicial() {
     pag2.style.display = 'none'
 }
 
-
-
 document.getElementById('nome_jogador').addEventListener('input', function () {
     salvarLocalmente('nome_jogador_' + perso, document.getElementById('nome_jogador').value);
 });
@@ -553,7 +551,7 @@ function mostrarPer() {
             linhaPer +
             `
         <tr id=linha${index}>
-            <td>
+            <td class='tdsoma'>
                 <p id="soma${index}" class='soma'>${linha.soma || '2'}</p>
             </td>
             <td>
