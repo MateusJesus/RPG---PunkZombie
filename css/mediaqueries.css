@@ -1,0 +1,92 @@
+
+@media (max-width: 1000px) {
+    hr {
+        height: 1em;
+        margin: 0em .5em;
+    }
+    label {
+        font-size: 9px;
+    }
+
+    .imagem_perso img {
+        height: auto;
+        width: auto;
+        max-width: 100%;
+        max-height: 100%;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    input:focus{
+        outline: none;
+    }
+    
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+
+    .status input{
+        max-width: 2em;
+    }
+
+    .status .title_content{
+        padding: 1.5em 0;
+    }
+    .status p {
+        font-size: 15px;
+    }
+
+    .title_content{
+        font-size: 12px;
+    }
+    .div-inf_stat{
+        width: 100%;
+    }
+    .personagem{
+        flex-direction: column;
+    }
+
+    .inf_item input{
+        width: calc(100% - 1em);
+    }
+
+    .sobre_personagem{
+        flex-direction: column;
+    }
+    .content_perso {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        margin: .5em;
+    }
+    .status{
+        width: 100%;
+    }
+    .atributos{
+        width: 100%;
+    }
+    .soma {
+        height: 3em;
+        width: 3em;
+        line-height: 3em;
+    }
+    .TUDOiventario{
+        flex-direction: column;
+    }
+
+    .carga_prof, .vest_def, .atri_peri, .resistencia_foto{
+        width: 100%;
+    }
+
+
+    .divhab{
+        flex-direction: column;
+    }
+
+
+
+}
+
+@media (max-width: 500px) {
+
+}

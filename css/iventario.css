@@ -17,9 +17,23 @@
     gap: 10px;
 }
 
-
 .carga_prof{
-    width: 45%;
+    width: 50%;
+}
+
+.carga_content input {
+    width: 1.5em;
+    text-align: center;
+    font-size: 20px;
+    padding: .2em;
+    height: 1.5em;
+}
+
+.carga_content{
+    margin: .2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .res_carga, #resPenDef, #resDefDef{

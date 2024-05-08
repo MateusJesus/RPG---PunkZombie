@@ -28,13 +28,13 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 100%;
+    width: 100%; 
     height: 100%;
-    overflow: auto;
-    overflow-x: hidden;
 }
 
 .campoHab {
+    overflow: auto;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -48,12 +48,14 @@
     padding: .5em;
 }
 
-.campHab_content {
+.campHab_content {    
+    height: 300px;
+    overflow: auto;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100%;
 }
 
 .tituloHab{

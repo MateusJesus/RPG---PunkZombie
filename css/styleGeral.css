@@ -1,15 +1,20 @@
-body{
+body {
     font-family: "Inter", sans-serif;
     font-weight: 700;
-}   
+}
 
-.paginas {
+.paginas{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-hr{
+section {
+    padding: 1em;
+    max-width: 1400px;
+}
+
+hr {
     height: 2em;
     margin: .4em;
     border: 2px solid var(--color-2);
@@ -38,7 +43,7 @@ input {
     color: var(--color-3);
 }
 
-input:focus{
+input:focus {
     outline: none;
 }
 
@@ -46,65 +51,62 @@ input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
-section {
-    padding: 1em;
-}
-
 th {
     color: var(--color-3);
     text-align: center;
     font-size: 10px;
     border-bottom: 1px solid var(--color-3);
-    vertical-align:bottom;
+    vertical-align: bottom;
     padding-bottom: .2em;
 }
 
-td{
+td {
     height: 100%;
-    vertical-align:middle;
+    vertical-align: middle;
 }
 
-button{
+button {
     background-color: var(--color-3);
     border-radius: 5px;
     color: white;
     padding: .4em 3em;
     transition: ease-in-out .2s;
-    border: none; 
+    border: none;
     font-weight: 700;
     text-transform: uppercase;
     margin: .5em 0;
 }
 
-button:hover{
+button:hover {
     background-color: var(--color-4);
     cursor: pointer;
     border-radius: 10px;
 }
 
-button:focus{
+button:focus {
     outline: none;
 }
 
 
-.sideBar{
+.sideBar {
     height: 100vh;
     display: flex;
     position: fixed;
     position: absolute;
 }
 
-.botaoSidebar{
+.botaoSidebar {
     width: 2em;
     position: absolute;
-    transform: translate(14em,-1em);
+    transform: translate(14em, -1em);
 }
-.botaoSidebar i::before{
+
+.botaoSidebar i::before {
     font-size: 40px;
     background-color: var(--color-4);
 }
 
-.sideBarCOntent{
+.sideBarCOntent {
     background-color: var(--color-3);
     color: var(--white);
     position: absolute;
@@ -113,16 +115,16 @@ button:focus{
     height: 100vh;
     width: 13em;
     vertical-align: middle;
-    transition: transform ease-in-out .4s, box-shadow .4s ;
+    transition: transform ease-in-out .4s, box-shadow .4s;
     transform: translateX(-15em);
-    -webkit-box-shadow: 13px 0px 31px 1px rgba(0,0,0,0.1);
-    -moz-box-shadow: 13px 0px 31px 1px rgba(0,0,0,0.1);
-    box-shadow: 13px 0px 31px 1px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 13px 0px 31px 1px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 13px 0px 31px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 13px 0px 31px 1px rgba(0, 0, 0, 0.1);
 }
 
-.sideBarCOntent:hover{
+.sideBarCOntent:hover {
     transform: translateX(0em);
-    box-shadow: 13px 0px 31px 1px rgba(0,0,0,0.4);
+    box-shadow: 13px 0px 31px 1px rgba(0, 0, 0, 0.4);
 }
 
 .sideBarCOntent span {
@@ -137,7 +139,7 @@ button:focus{
     border: solid 1px var(--color-4);
 }
 
-.sideBarCOntent li{
+.sideBarCOntent li {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -155,11 +157,11 @@ button:focus{
     background-color: var(--color-4);
 }
 
-#setaFichasSidebar{
+#setaFichasSidebar {
     transition: transform .3s ease-out;
 }
 
-#listaFichasSidebar{
+#listaFichasSidebar {
     transition: .3s ease-in-out;
     opacity: 0;
     max-height: 0;
@@ -167,7 +169,8 @@ button:focus{
     overflow: auto;
     height: 13em;
 }
-#listaFichasSidebar.verLista{
+
+#listaFichasSidebar.verLista {
     max-height: 13em;
     opacity: 1;
 }
@@ -178,25 +181,24 @@ button:focus{
     margin: 0em 0 .5em 1em;
 }
 
-.area_fichas i{
+.area_fichas i {
     padding: .5em;
-    background-color: chocolate;
     border-radius: 10px;
     margin: 0 .5em;
     cursor: pointer;
 }
 
-.fichaElement{
+.fichaElement {
     margin: 2em;
 }
 
-.title_content{
+.title_content {
     text-align: center;
     text-transform: uppercase;
     font-weight: 700;
     color: var(--white);
     font-size: 15px;
-    padding: 1em;
+    padding: 1em 0;
     background-color: var(--color-3);
 }
 
@@ -215,28 +217,31 @@ button:focus{
     width: 3.5em;
 }
 
-.thUltimo{
+.thUltimo {
     border: none;
 }
 
 .overflow::-webkit-scrollbar {
-    width: 4px; /* largura da barra de rolagem */
+    width: 4px;
+    /* largura da barra de rolagem */
 }
-    
+
 .overflow::-webkit-scrollbar-track {
-    background: var(--color-1); /* cor do fundo da barra de rolagem */
+    background: var(--color-1);
+    /* cor do fundo da barra de rolagem */
 }
 
 .overflow::-webkit-scrollbar-thumb {
-    background: var(--color-2); 
-    border-radius: 6px; 
+    background: var(--color-2);
+    border-radius: 6px;
 }
 
 .overflow::-webkit-scrollbar-thumb:hover {
-    background: var(--color-4); /* cor do "thumb" ao passar o mouse por cima */
+    background: var(--color-4);
+    /* cor do "thumb" ao passar o mouse por cima */
 }
 
-.form-select{
+.form-select {
     width: 100%;
     color: var(--color-3);
     background-color: var(--color-2);
@@ -252,7 +257,8 @@ button:focus{
     color: var(--white);
     background-color: var(--color-3);
     outline: none;
-    border: none; /* Remove a borda quando focado */
+    border: none;
+    /* Remove a borda quando focado */
 }
 
 .remove i::before {
@@ -263,11 +269,11 @@ button:focus{
     cursor: pointer;
     font-size: 30px;
     height: 100%;
-    vertical-align:middle;
+    vertical-align: middle;
     transition: background ease-in-out .5s;
 }
 
-.remove i:hover::before{
+.remove i:hover::before {
     background-color: var(--color-4);
 }
 
@@ -279,7 +285,7 @@ button:focus{
     display: block;
 }
 
-.header_ficha{
+.header_ficha {
     display: none;
     justify-content: space-between;
     padding: 1em;
@@ -287,30 +293,32 @@ button:focus{
     background-color: var(--color-3);
 }
 
-.pagina_inicial{
+.pagina_inicial {
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}   
+}
 
 .pagEditar {
-    display: none; /* Fixar posição na tela */
-    z-index: 1000;/* Inicialmente oculto */
+    display: none;
+    /* Fixar posição na tela */
+    z-index: 1000;
+    /* Inicialmente oculto */
     position: fixed;
     justify-content: center;
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .editor_img {
     justify-content: center;
-    -webkit-box-shadow: 0px 11px 38px 4px rgba(0,0,0,0.41);
-    -moz-box-shadow: 0px 11px 38px 4px rgba(0,0,0,0.41);
-    box-shadow: 0px 11px 38px 4px rgba(0,0,0,0.41);
+    -webkit-box-shadow: 0px 11px 38px 4px rgba(0, 0, 0, 0.41);
+    -moz-box-shadow: 0px 11px 38px 4px rgba(0, 0, 0, 0.41);
+    box-shadow: 0px 11px 38px 4px rgba(0, 0, 0, 0.41);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -321,7 +329,7 @@ button:focus{
     transform: translateZ(1);
 }
 
-.previewImg{
+.previewImg {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -339,17 +347,19 @@ button:focus{
     justify-content: space-around;
 }
 
-#loadingFicha{
+#loadingFicha {
     height: 100vh;
     width: 100vw;
     display: none;
-    justify-content:  center;
+    justify-content: center;
     align-items: center;
 }
 
 .loading {
-    border: 2px solid var(--color-1); /* Light grey */
-    border-top: 2px solid var(--color-3); /* Blue */
+    border: 2px solid var(--color-1);
+    /* Light grey */
+    border-top: 2px solid var(--color-3);
+    /* Blue */
     border-radius: 50%;
     width: 120px;
     height: 120px;
@@ -357,26 +367,33 @@ button:focus{
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 #opcoesImagem {
-    display: none; /* Fixar posição na tela */
-    z-index: 1000;/* Inicialmente oculto */
+    display: none;
+    /* Fixar posição na tela */
+    z-index: 1000;
+    /* Inicialmente oculto */
     position: fixed;
     justify-content: center;
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
-.opcoesImagemBtns{
+.opcoesImagemBtns {
     justify-content: center;
-    -webkit-box-shadow: 0px 11px 38px 4px rgba(0,0,0,0.41);
-    -moz-box-shadow: 0px 11px 38px 4px rgba(0,0,0,0.41);
-    box-shadow: 0px 11px 38px 4px rgba(0,0,0,0.41);
+    -webkit-box-shadow: 0px 11px 38px 4px rgba(0, 0, 0, 0.41);
+    -moz-box-shadow: 0px 11px 38px 4px rgba(0, 0, 0, 0.41);
+    box-shadow: 0px 11px 38px 4px rgba(0, 0, 0, 0.41);
     display: flex;
     flex-direction: column;
     padding: .4em;
@@ -394,14 +411,14 @@ button:focus{
     text-align: center;
     padding: .6em;
     transition: ease-in-out .2s;
-    border: none; 
+    border: none;
     font-weight: 500;
     font-size: 13px;
     text-transform: uppercase;
     margin: .1em .1em;
 }
 
-.opcoesImagemBtns label:hover{
+.opcoesImagemBtns label:hover {
     background-color: var(--color-4);
     cursor: pointer;
 }

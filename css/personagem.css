@@ -1,35 +1,17 @@
 
-.content{
-    padding: 0 .5em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.content input{
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--color-3);
-    font-size: 20px;
-    height: 1em;
-    width: 1.1em;
-    margin: 0 .1em;
-    padding: .5em;
-    font-weight: 700;
-} 
-
 .personagem{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    height: 100%;
 }
 
 .sobre_personagem{
     display: flex;
     justify-content: space-between;
     gap: 10px;
+    width: 100%;
+    height: 100%;
 }
 
 .informacoes_status{
@@ -43,10 +25,23 @@
     gap: 10px;
 }
 
+.informacoes_perso input{
+    width: calc(100% - 1em);
+    height: 1em;
+}
+
+.informacoes_perso {
+    width: 100%;
+}
+
+.informacoes_perso .title_content {
+    padding: 1em;
+}
+
 .content_perso {
     display: flex;
+    gap: 7px;
     flex-direction: column;
-    gap: 6px;
     margin: .5em;
 }
 
@@ -54,27 +49,53 @@
     display: flex;
     flex-direction: column;
     text-transform: uppercase;
-    justify-content: space-between;
     font-size: 9px;
     font-weight: 700;
 }
 
+
 .status{
+    width: 100%;
+}
+
+.status_content{
+    gap: 10px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    justify-content: space-between;
 }
 
-.if_status{
+.if_status {
     display: flex;
     align-items: center;
+    height: 100%;
 }
-
 
 .status .title_content {
-    width: 2em;
-    padding: 1.2em 1em;
+    width: 6em;
 }
+
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0 .5em;
+}
+
+.content input{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-3);
+    font-size: 15px;
+    width: 100%;
+    height: 100%;
+    padding: .5em;
+    font-weight: 700;
+} 
+
 
 .carac_personagem {
     display: flex;
@@ -92,11 +113,15 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 100%;
+    width: 90%;
 }
 
 .resistencia{
     display: flex;
+}
+
+.resistencia .title_content{
+    padding: 1em;
 }
 
 .resistencia input{
@@ -106,7 +131,7 @@
 
 .imagem_perso {
     height: 40em;
-    width: 23.3648125em;
+    width: 100%;
     text-align: center;
 }
 
@@ -155,26 +180,27 @@
     background-color: rgba(129, 129, 129, 0.2);
 }
 
+.atri_peri{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+}
 
 .atributos {
+    width: 100%;
     display: flex;
     gap: 10px;
     justify-content: space-between;
 }
 
 .atributos input {
-    width: 2.7em;
+    width: calc(100% - 2em);
     color: var(--color-3);
     font-size: 17px;
     margin: .5em;
     text-align: center;
     font-weight: 700;
-}
-
-.atri_peri{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
 }
 
 
@@ -194,13 +220,20 @@
     width: 18em;
 }
 
-.soma{
+.tdsoma{
     background-color: var(--color-3);
-    color: var(--white);
-    font-weight: 700;
-    border-radius: 100%;
+    border-radius: 10em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tdsoma p {
     height: 2em;
-    width: 2em;
+    width: 1.5em;
+    display: block;
+    color: var(--white);
     line-height: 2em;
 }
 
