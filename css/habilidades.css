@@ -49,7 +49,6 @@
 }
 
 .campHab_content {    
-    height: 100%;
     overflow: auto;
     overflow-x: hidden;
     display: flex;
